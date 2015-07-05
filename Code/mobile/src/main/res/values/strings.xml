@@ -1,15 +1,13 @@
 <resources>
-    <string name="app_name">AppDroid1</string>
-
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_example">Ejemplo de accion</string>
-
-    <string name="action_settings">Configuración</string>
-    <string name="action_exit">Salir</string>
+    <string name="app_name">App Andreslon</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="home_item">Inicio</string>
+    <string name="products_item">Productos</string>
+    <string name="cart_item">Carrito</string>
+    <string name="orders_item">Ordenes</string>
+    <string name="invoices_item">Facturas</string>
+    <string name="log_out_item">Cerrar Sesión</string>
+    <string name="settings_item">Configuración</string>
+    <string name="email_navdrawer">andreslon@outlook.com</string>
+    <string name="name_navdrawer">Andrés Londoño</string>
 </resources>
