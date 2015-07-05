@@ -16,7 +16,6 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
-    private String drawerTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
-        drawerTitle = getResources().getString(R.string.home_item);
         if (savedInstanceState == null) {
-            selectItem(drawerTitle);
+            selectItem(navigationView.getMenu().getItem(0));
         }
 
     }
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
                         // Crear nuevo fragmento
                         String title = menuItem.getTitle().toString();
-                        selectItem(title);
+                        selectItem(menuItem);
                         return true;
                     }
                 }
@@ -87,17 +85,35 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void selectItem(String title) {
+    private void selectItem(MenuItem menuItem) {
+        String title = menuItem.getTitle().toString();
 
         Bundle args = new Bundle();
-        args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
-        Fragment fragment = PlaceholderFragment.newInstance(title);
+        Fragment fragment = new Fragment();
+        switch (title) {
+            case "Inicio":
+                args.putString(HomeFragment.ARG_SECTION_TITLE, title);
+                fragment = HomeFragment.newInstance(title);
+                break;
+            case "Productos":
+                args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
+                fragment = PlaceholderFragment.newInstance(title);
+                break;
+            case "Carrito":
+                break;
+            case "Ordenes":
+                break;
+            case "Facturas":
+                break;
+            case "Cerrar Sesión":
+                break;
+
+        }
+
+
         fragment.setArguments(args);
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager
-                .beginTransaction()
-                .replace(R.id.main_content, fragment)
-                .commit();
+        fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
         drawerLayout.closeDrawers();
         setTitle(title);
     }
