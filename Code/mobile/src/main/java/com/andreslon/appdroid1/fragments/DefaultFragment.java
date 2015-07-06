@@ -1,4 +1,4 @@
-package com.andreslon.appdroid1;
+package com.andreslon.appdroid1.fragments;
 
 
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.andreslon.appdroid1.R;
+
 
 /**
  * Fragment for the main content
  */
-public class PlaceholderFragment extends Fragment {
+public class DefaultFragment extends Fragment {
     /**
      * This argument represents the title for each section
      */
@@ -20,21 +22,21 @@ public class PlaceholderFragment extends Fragment {
 
 
 
-    public static PlaceholderFragment newInstance(String sectionTitle) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
+    public static DefaultFragment newInstance(String sectionTitle) {
+        DefaultFragment fragment = new DefaultFragment();
         Bundle args = new Bundle();
         args.putString(ARG_SECTION_TITLE, sectionTitle);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public PlaceholderFragment() {
+    public DefaultFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.section_fragment, container, false);
+        View view = inflater.inflate(R.layout.page_default, container, false);
 
         // Ubicar argumento en el text view de section_fragment.xml
         String title = getArguments().getString(ARG_SECTION_TITLE);

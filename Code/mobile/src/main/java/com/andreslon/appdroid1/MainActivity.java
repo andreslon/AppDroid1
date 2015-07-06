@@ -12,6 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.andreslon.appdroid1.fragments.CartFragment;
+import com.andreslon.appdroid1.fragments.DefaultFragment;
+import com.andreslon.appdroid1.fragments.HomeFragment;
+import com.andreslon.appdroid1.fragments.DefaultFragment;
+import com.andreslon.appdroid1.fragments.InvoicesFragment;
+import com.andreslon.appdroid1.fragments.OrderFragment;
+import com.andreslon.appdroid1.fragments.ProductsFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,20 +100,26 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = new Fragment();
         switch (title) {
             case "Inicio":
-                args.putString(HomeFragment.ARG_SECTION_TITLE, title);
-                fragment = HomeFragment.newInstance(title);
+                fragment = HomeFragment.newInstance();
                 break;
             case "Productos":
-                args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
-                fragment = PlaceholderFragment.newInstance(title);
+                fragment = ProductsFragment.newInstance();
                 break;
             case "Carrito":
+                fragment = CartFragment.newInstance();
                 break;
             case "Ordenes":
+                fragment = OrderFragment.newInstance();
                 break;
             case "Facturas":
+                fragment = InvoicesFragment.newInstance();
                 break;
             case "Cerrar Sesión":
+
+                break;
+            default:
+                args.putString(DefaultFragment.ARG_SECTION_TITLE, title);
+                fragment = DefaultFragment.newInstance(title);
                 break;
 
         }
