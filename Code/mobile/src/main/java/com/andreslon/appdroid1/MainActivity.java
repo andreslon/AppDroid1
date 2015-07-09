@@ -19,6 +19,7 @@ import com.andreslon.appdroid1.fragments.DefaultFragment;
 import com.andreslon.appdroid1.fragments.InvoicesFragment;
 import com.andreslon.appdroid1.fragments.OrderFragment;
 import com.andreslon.appdroid1.fragments.ProductsFragment;
+import com.andreslon.appdroid1.ui.HypedArtistsFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -105,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
             case "Productos":
                 fragment = ProductsFragment.newInstance();
                 break;
+            case "Artistas":
+                fragment = new HypedArtistsFragment();
+                break;
             case "Carrito":
                 fragment = CartFragment.newInstance();
                 break;
@@ -121,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 args.putString(DefaultFragment.ARG_SECTION_TITLE, title);
                 fragment = DefaultFragment.newInstance(title);
                 break;
-
         }
-
 
         fragment.setArguments(args);
         FragmentManager fragmentManager = getSupportFragmentManager();

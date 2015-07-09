@@ -23,7 +23,10 @@
             android:id="@+id/nav_invoices"
             android:icon="@drawable/ic_file_document"
             android:title="@string/invoices_item" />
-
+        <item
+            android:id="@+id/nav_artists"
+            android:icon="@drawable/ic_file_document"
+            android:title="@string/artist_item" />
         <!-- Sección de configuración -->
         <item
             android:id="@+id/configuration_section"

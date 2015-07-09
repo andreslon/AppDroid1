@@ -6,6 +6,7 @@
     <string name="cart_item">Carrito</string>
     <string name="orders_item">Ordenes</string>
     <string name="invoices_item">Facturas</string>
+    <string name="artist_item">Artistas</string>
     <string name="log_out_item">Cerrar Sesión</string>
     <string name="settings_item">Configuración</string>
     <string name="email_navdrawer">andreslon@outlook.com</string>
